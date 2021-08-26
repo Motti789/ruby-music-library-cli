@@ -1,4 +1,5 @@
 class Artist
+  extend Concerns::Findable
 
     attr_accessor :name
     attr_reader :songs
@@ -33,11 +34,11 @@ class Artist
       song.artist = self unless song.artist
     end
 
-#     def songs 
-#       Song.all.select { |s| s.artist == self }
-#     end
+    def songs 
+      Song.all.select { |s| s.artist == self }
+    end
 
-#     def genres
-#       songs.collect{ |s| s.genre }.uniq
-#     end
+    def genres
+      songs.collect{ |s| s.genre }.uniq
+    end
  end 
