@@ -33,6 +33,10 @@ class Genre
     def artists
       songs.collect{ |s| s.artist }.uniq
     end
+
+    def songs 
+      Song.all.select { |s| s.genre == self }
+    end
   
 
 end
